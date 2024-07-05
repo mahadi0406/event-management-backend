@@ -6,6 +6,7 @@ import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 import { DatabaseService } from './database/database.service';
+import { UsersController } from './users/users.controller';
 
 @Module({
   imports: [
@@ -22,7 +23,7 @@ import { DatabaseService } from './database/database.service';
       synchronize: false,
     }),
   ],
-  controllers: [AppController],
+  controllers: [AppController, UsersController],
   providers: [AppService, DatabaseService],
 })
 export class AppModule {

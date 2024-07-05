@@ -23,8 +23,9 @@ export class UsersService {
     return this.usersRepository.findOneBy({ email });
   }
 
-  createUser(user: UserDto): User {
-    return this.usersRepository.create(user);
+  createUser(user: UserDto): Promise<User> {
+    const newUser = this.usersRepository.create(user);
+    return this.usersRepository.save(newUser);
   }
 
   async remove(id: number): Promise<void> {
