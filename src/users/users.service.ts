@@ -23,7 +23,7 @@ export class UsersService {
     return this.usersRepository.findOneBy({ email });
   }
 
-  createUser(user: { password: Promise<string>; phone: string; name: string; email: string }): Promise<User> {
+  createUser(user: UserDto): Promise<User> {
     const newUser = this.usersRepository.create(user);
     return this.usersRepository.save(newUser);
   }
