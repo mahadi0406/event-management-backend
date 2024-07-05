@@ -19,7 +19,7 @@ import { DatabaseService } from './database/database.service';
       password: 'event-root',
       database: 'event-root',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: true,
+      synchronize: false,
     }),
   ],
   controllers: [AppController],

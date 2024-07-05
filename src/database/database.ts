@@ -8,7 +8,7 @@ const config: TypeOrmModuleOptions = {
   password: 'event-root',
   database: 'event-root',
   entities: [__dirname + '/**/*.entity{.ts,.js}'],
-  synchronize: true,
+  synchronize: false,
 };
 
 export default config;
