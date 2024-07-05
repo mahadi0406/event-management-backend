@@ -7,21 +7,24 @@ import {
 } from 'typeorm';
 
 @Entity()
-export class User {
+export class Event {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ length: 100 })
+  @Column()
   name: string;
 
-  @Column({ unique: true })
-  email: string;
-
-  @Column({ nullable: true })
-  phone?: string;
-
   @Column()
-  password: string;
+  description: string;
+
+  @Column({ type: 'timestamp' })
+  startTime: Date;
+
+  @Column({ type: 'timestamp' })
+  endTime: Date;
+
+  @Column({ type: 'int' })
+  totalSeats: number;
 
   @CreateDateColumn({ name: 'created_at', type: 'timestamp' })
   createdAt: Date;
