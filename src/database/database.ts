@@ -9,7 +9,7 @@ const config: TypeOrmModuleOptions = {
   password: 'event-root',
   database: 'event-root',
   entities: [User],
-  synchronize: false,
+  synchronize: true,
 };
 
 export default config;

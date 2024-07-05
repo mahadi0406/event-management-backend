@@ -19,16 +19,7 @@ export class AuthController {
 
   @HttpCode(HttpStatus.CREATED)
   @Post('signup')
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   signUp(@Body() userDto: UserDto) {
-    try {
-      return this.authService.register(userDto);
-    } catch (error) {
-      // Handle errors appropriately
-      return error;
-    }
-
-    //
-    // return this.authService.register(userDto);
+    return this.authService.register(userDto);
   }
 }
