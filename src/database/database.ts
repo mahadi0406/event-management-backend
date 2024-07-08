@@ -1,5 +1,6 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { User } from '../users/user.entity';
+import { Event } from '../event/event.entity';
 
 const config: TypeOrmModuleOptions = {
   type: 'postgres',
@@ -8,7 +9,7 @@ const config: TypeOrmModuleOptions = {
   username: 'event-root',
   password: 'event-root',
   database: 'event-root',
-  entities: [User],
+  entities: [User, Event],
   synchronize: true,
 };
 
